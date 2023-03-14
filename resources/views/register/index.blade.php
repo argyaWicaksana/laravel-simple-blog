@@ -1,43 +1,45 @@
 @extends('layouts.main')
 
 @section('kotak')
-  <div class="row justify-content-center">
-    <div class="col-lg-4">
-      <main class="form-registration w-100 m-auto">
-          <h1 class="h3 mb-3 fw-normal">Registration Form</h1>
-        <form action="/register" method="post">
-          @csrf
-          <div class="form-floating">
-            <input type="text" name='name' class="form-control rounded-top @error('name') is-invalid @enderror" id="name" placeholder="Username" 
-            autocomplete="off" value="{{ old('name') }}" required>
-            <label for="name">Username</label>
-            @error('name')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="form-floating">
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" 
-            autocomplete="off" value="{{ old('email') }}" required>
-            <label for="email">Email address</label>
-            @error('email')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-          <div class="form-floating">
-            <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password"
-            required>
-            <label for="password">Password</label>
-            @error('password')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-          </div>
-        
-          <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
-        </form>
-        <small>Already have account? <a href="/login">Login</a></small>
-      </main>
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <main class="form-registration w-100 m-auto">
+                <h1 class="h3 mb-3 fw-normal">Registration Form</h1>
+                <form action="/register" method="post">
+                    @csrf
+                    <div class="form-floating">
+                        <input type="text" name='name'
+                            class="form-control rounded-top @error('name') is-invalid @enderror" id="name"
+                            placeholder="Username" autocomplete="off" value="{{ old('name') }}" required>
+                        <label for="name">Username</label>
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                            id="email" placeholder="name@example.com" autocomplete="off" value="{{ old('email') }}"
+                            required>
+                        <label for="email">Email address</label>
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" name="password"
+                            class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password"
+                            placeholder="Password" required>
+                        <label for="password">Password</label>
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
+                    <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
+                </form>
+                <small>Already have account? <a href="/login">Login</a></small>
+            </main>
+
+        </div>
     </div>
-  </div>
-    
 @endsection

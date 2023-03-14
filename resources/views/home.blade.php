@@ -7,7 +7,6 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet magnam est distinctio.
     </p>
     <p>
-        Tanggal: {{time() }}
+        Tanggal: {{ time() }}
     </p>
-    
 @endsection
